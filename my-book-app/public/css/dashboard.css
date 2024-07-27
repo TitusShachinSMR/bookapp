@@ -1,0 +1,1090 @@
+body,
+html {
+  background-color: black;
+  background-image: url("../stylingimages/magical\ space\ bg.jpg");
+}
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-right: 2px white solid;
+  background-image: url("../stylingimages/blurimage.jpg");
+}
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  color: #ffffff;
+  width: 100%;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.849);
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+}
+
+.sidenav a:hover {
+  color: rgb(5, 255, 242);
+}
+
+.titleside {
+  position: absolute;
+  background-color: black;
+  font-family: "Freehand", cursive;
+  width: 80%;
+  margin-left: 35%;
+  color: rgb(255, 255, 255);
+  top: 0px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: transparent;
+}
+.sidenav a div {
+  padding-top: 5px;
+  margin-left: 20%;
+}
+.svg {
+  margin-left: 2px;
+}
+
+.openbtn:hover {
+  color: rgb(228, 159, 159);
+}
+.sidebarprofile {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.imageprofile {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin-left: 30%;
+  height: 18%;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.imageprofile:hover {
+  border: 3px rgb(0, 0, 0) solid;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  background-image: url("../stylingimages/bookblackandwhite.jpg");
+}
+.title img {
+  border: 2px white solid;
+  border-radius: 50%;
+  display: inline;
+  background-color: black;
+}
+.extra {
+  color: white;
+  font-size: 60px;
+  font-family: "Freehand", cursive;
+  display: inline;
+  margin-left: 4px;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px rgb(112, 208, 203);
+}
+.leaderboard {
+  height: 100%;
+  width: 20%;
+  border-left: 2px white solid;
+  padding-right: 1%;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  background-image: url("../stylingimages/leaderboard2.jpg");
+}
+.leaderheadings {
+  color: white;
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 32px;
+  background-color: rgba(0, 0, 0, 0.744);
+  margin: 10px;
+  border-radius: 5px;
+}
+.leaderheadings svg {
+  color: rgb(255, 215, 0);
+}
+
+.filter-container {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-top: white ridge 1px;
+  border-bottom: white ridge 1px;
+  margin-left: 21%;
+  margin-right: 21%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+  background-image: url("../stylingimages/SEARCH.JPG");
+}
+.authorsearch-container,
+.genresearch-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.genre,
+.authorname {
+  margin: 3px;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.genre:hover,
+.authorname:hover {
+  color: #000000;
+  background-color: #ffffff;
+  border-color: black;
+  font-weight: bold;
+}
+
+.pricesearch-container div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 10px;
+}
+.search {
+  border-radius: 10px;
+  margin-top: 10px;
+  height: 30px;
+}
+
+.price {
+  border-radius: 10px;
+  margin-top: 10px;
+  height: 30px;
+}
+.filter-price-max,
+.filter-price-min {
+  margin-top: 10px;
+  background-color: rgb(0, 139, 253);
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.filter-genre,
+.filter-author {
+  margin-top: 10px;
+  background-color: rgb(0, 139, 253);
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.search-results-final {
+  text-align: center;
+  color: white;
+  background-color: rgb(0, 139, 253);
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 10px;
+  border-bottom: 1px white ridge;
+}
+.search-results-final:hover {
+  background-color: #000000;
+  content: white;
+  border: 2px solid white;
+}
+
+.genrename {
+  color: white;
+}
+.filterresultbooks {
+  margin-left: 22%;
+  margin-right: 22%;
+  margin-top: 10px;
+  height: fit-content;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.bookcontainer {
+  color: white;
+  border: 1px solid white;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+  border-radius: 10px;
+  background-image: url("../stylingimages/RESULT.JPG");
+  font-size: 25px;
+}
+.bookcontainer img {
+  border: 1px solid white;
+  height: 50%;
+  width: 50%;
+}
+
+.filteredbooks {
+  height: fit-content;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.filteredbooks div {
+  text-align: center;
+  margin: 3px;
+  background-color: #000000ab;
+}
+
+.bookcontainerforview {
+  margin-right: 1%;
+  height: fit-content;
+  margin-left: 1%;
+  margin-top: 5%;
+  border: white solid 2px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+}
+.bookdetails {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: white solid 1px;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  background-image: url("../stylingimages/brownbackground.jpg");
+}
+.bookcoverpage {
+  width: 50%;
+  height: 50%;
+}
+.booksdetails {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.bookscontainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.savebook {
+  width: fit-content;
+  top: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.582);
+  border-radius: 50%;
+  padding: 3px;
+  border: 1px solid white;
+}
+.booktitle,
+.bookdescription,
+.bookgenre,
+.bookauthor {
+  margin: 10px;
+  white-space: pre wrap;
+  font-weight: bold;
+  display: flex;
+  height: fit-content;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  justify-content: center;
+}
+.bookcoverpage {
+  border: 2px solid black;
+}
+.commentheading {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.bookdescription {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.comments {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border: white solid 1px;
+  justify-content: center;
+  background-color: #000000;
+  border-radius: 10px;
+}
+.comments-show {
+  height: 75%;
+  width: 100%;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+}
+.commentarea {
+  height: 10%;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  background-color: rgba(0, 0, 0, 0.644);
+  color: white;
+  border-radius: 10px;
+}
+.rating {
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+.star {
+  font-size: 25px;
+}
+.active {
+  color: gold;
+}
+.submit {
+  color: rgb(255, 255, 255);
+  border: 1px solid white;
+  padding: 5px;
+  text-align: center;
+}
+.deletecomment {
+  color: rgb(255, 255, 255);
+  border: 1px solid white;
+  padding: 5px;
+}
+.ratinglikes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  height: fit-content;
+}
+.usernameandcomment {
+  font-size: 20px;
+  margin-left: 10px;
+  height: fit-content;
+}
+.username {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to right, black, grey);
+}
+.commentsdiv {
+  border-bottom: 1px ridge white;
+}
+.popoutbook {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(50, 41, 41, 0.893),
+    rgba(0, 0, 0, 0.801)
+  );
+  background-image: url("../stylingimages/bookdash.jpg");
+  display: none;
+  padding-bottom: 300%;
+}
+.close {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
+.foricon {
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: #000000ad;
+}
+.addtocart {
+  width: fit-content;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.582);
+  border-radius: 50%;
+  padding: 3px;
+  color: white;
+  border: 1px solid white;
+  margin-left: 10px;
+}
+.addtocart:hover,
+.savebook:hover {
+  background-color: #464040;
+}
+.leaderuser {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 10px;
+  font-weight: bold;
+  align-items: center;
+  background-color: #000000bd;
+  margin: 5px;
+  border-radius: 5px;
+}
+.leaderuser span {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 10px;
+}
+.leaderuser img {
+  border-radius: 50%;
+  margin: 3px;
+}
+.leaderboard-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.829);
+  border-radius: 5px;
+}
+.bookcard {
+  color: white;
+  margin-top: 5%;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  background-image: linear-gradient(to right, black, rgb(33, 32, 32));
+  background-image: url("../stylingimages/paperbg.jpg");
+}
+.disabled {
+  pointer-events: none;
+}
+.feedbox {
+  height: fit-content;
+  margin-left: 21%;
+  margin-right: 22%;
+  display: flex;
+  flex-direction: column;
+}
+.imageandusername {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Arsenal SC", sans-serif;
+  font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  background-color: rgba(255, 255, 255, 0.495);
+  color: #000000;
+  font-weight: bold;
+}
+.bookimage {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgb(0, 0, 0);
+}
+.userimage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgb(0, 0, 0);
+}
+.bookimageandcomment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Titillium Web", sans-serif;
+  font-style: italic;
+  font-size: 20px;
+
+  justify-content: space-evenly;
+}
+.bookimageandcomment div {
+  color: #ffffff;
+  background-color: #000000c0;
+  text-align: center;
+  overflow: hidden;
+  padding: 5px;
+  border-radius: 5px;
+}
+.feedusername {
+  margin-left: 2%;
+}
+
+.likedislikes {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: right;
+  align-items: center;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.516);
+}
+.likes {
+  margin-right: 8%;
+}
+
+.dislikes {
+  margin-right: 8%;
+}
+.time {
+  margin-right: 2%;
+}
+.finalprofile-container {
+  z-index: 3;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: none;
+  padding-left: 19%;
+  background-image: url("../stylingimages/profileindash.jpg");
+}
+
+.closeprofile {
+  display: flex;
+  font-weight: bolder;
+  justify-content: right;
+  color: white;
+  position: fixed;
+  top: 1%;
+  left: 95%;
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 5px;
+}
+.closeprofile:hover {
+  font-size: 18px;
+  background-color: #ffffff9e;
+  color: #000000;
+}
+.imageprofile {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin-left: 30%;
+  height: 18%;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.profile-image {
+  margin-left: 5%;
+  margin-top: 5%;
+  height: 20%;
+  width: fit-content;
+  display: flex;
+  justify-content: left;
+}
+.divforprofile {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.mainprofile {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: 0.3s;
+}
+.userdetails {
+  margin-left: 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 10px;
+  height: 95%;
+  overflow: auto;
+  color: white;
+  transition: 0.3s;
+}
+.profile-name {
+  font-size: 32px;
+  transition: 0.3s;
+}
+.emailtitle {
+  margin-top: 5px;
+  font-size: 20px;
+  display: inline;
+  transition: 0.3s;
+}
+.profile-email {
+  font-size: 20px;
+  display: inline;
+  transition: 0.3s;
+}
+.bio {
+  margin-top: 10%;
+  white-space: pre-wrap;
+  transition: 0.3s;
+}
+
+.useredit {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  width: 100%;
+  align-items: center;
+  transition: 0.3s;
+}
+.follow {
+  background-color: rgb(133, 126, 126);
+  color: rgb(255, 255, 255);
+  margin-left: 10%;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.follow:hover {
+  border: 1px solid white;
+}
+.follfollowingwritten {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  transition: 0.3s;
+}
+.followers {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: 20%;
+  transition: 0.3s;
+}
+.followerscount {
+  margin-right: 4px;
+  transition: 0.3s;
+}
+.following {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: 20%;
+  transition: 0.3s;
+}
+.followingcount {
+  margin-right: 4px;
+  transition: 0.3s;
+}
+
+.uploads {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: 20%;
+  transition: 0.3s;
+}
+.uploadcount {
+  margin-right: 4px;
+  transition: 0.3s;
+}
+
+.commentprofile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 3%;
+  border: 2px solid white;
+}
+.commentusername {
+  font-family: "Arsenal SC", sans-serif;
+}
+.comment {
+  font-family: "Titillium Web", sans-serif;
+  margin-left: 10%;
+  background-image: linear-gradient(to bottom, black, rgb(29, 28, 28));
+}
+.profilebox {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.893),
+    rgba(6, 6, 6, 0.438)
+  );
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.leadericon {
+  display: none;
+}
+.leadersvg {
+  display: none;
+}
+.badge {
+  margin: 10px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.searchuser {
+  margin-left: 21%;
+  margin-right: 21%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+.searchuserinput {
+  width: 100%;
+  padding: 6px;
+  font-size: 20px;
+  border-radius: 10px;
+  margin-top: 5px;
+  background-color: #ffffffc7;
+}
+.user-search-results {
+  height: fit-content;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.589),
+    rgba(255, 255, 255, 0.785)
+  );
+  color: white;
+  border-radius: 10px;
+}
+.user-search-results img {
+  border-radius: 50%;
+}
+.userresults {
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.userresults span {
+  margin-left: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .pages {
+    display: none;
+  }
+  .imageprofile {
+    width: 50px;
+    height: 50px;
+    margin-top: 40%;
+    margin-left: 5%;
+  }
+  .bookimageandcomment {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+  .imageandusername {
+    font-size: 20px;
+  }
+  .bookimage {
+    margin-bottom: 10px;
+  }
+  .leadersvg {
+    display: block;
+  }
+  .leaderboard {
+    width: 0;
+    overflow: hidden;
+    transition: 0.8s linear;
+  }
+  .filter-container {
+    margin-right: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .searchuser {
+    margin-right: 1%;
+  }
+  .filterresultbooks {
+    margin-right: 1%;
+  }
+  .feedbox {
+    margin-right: 1%;
+  }
+  .search-results-final {
+    margin-left: 45%;
+    margin-right: 25%;
+  }
+  .titleside {
+    display: none;
+  }
+  .sidenav {
+    width: 13%;
+  }
+  .extra {
+    background-color: #0000009c;
+  }
+  .authorsearch-container,
+  .genresearch-container,
+  .pricesearch-container {
+    width: 80%;
+    margin-top: 20%;
+  }
+  .bookimage {
+    width: 150px;
+    height: 150px;
+  }
+  .userimage {
+    width: 30px;
+    height: 30px;
+  }
+  .bookcontainer img {
+    height: 20%;
+    width: 60%;
+  }
+  .finalprofile-container {
+    padding-left: 0;
+  }
+  .closeprofile {
+    left: 2%;
+  }
+  .profilebox {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .follow {
+    width: fit-content;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .following {
+    margin-right: 3%;
+  }
+  .followers {
+    margin-right: 3%;
+  }
+  .badge {
+    width: 50px;
+    height: 50px;
+  }
+  .divforprofile {
+    width: 100px;
+    height: 100px;
+  }
+  .bookcoverpage {
+    height: 30%;
+  }
+  .booktitle {
+    font-size: 20px;
+  }
+  .bookauthor,
+  .bookgenre {
+    font-size: 13px;
+  }
+  .bookdescription {
+    font-size: 20px;
+  }
+  .commentheading {
+    font-size: 15px;
+  }
+  .comment {
+    font-size: 15px;
+  }
+  .time {
+    font-size: 15px;
+  }
+  .rating {
+    font-size: 0px;
+  }
+  .star {
+    font-size: 15px;
+  }
+  .bookcontainerforview {
+    flex-direction: column;
+    margin-right: 2px;
+  }
+  .bookdetails {
+    width: 100%;
+  }
+  .comments {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .leadersvg {
+    display: none;
+  }
+  .leadericon {
+    display: none;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .pages {
+    display: none;
+  }
+  .title img {
+    margin-left: 20%;
+  }
+  .emailtitle {
+    font-size: 16px;
+  }
+  .profile-email {
+    font-size: 15px;
+  }
+  .extra {
+    font-size: 35px;
+    text-shadow: none;
+    background-color: transparent;
+    color: #000000;
+  }
+  .imageprofile {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 5%;
+  }
+  .bookimageandcomment {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+  .imageandusername {
+    font-size: 20px;
+  }
+  .bookimage {
+    margin-bottom: 10px;
+  }
+  .leadersvg {
+    display: block;
+  }
+  .leadericon {
+    display: block;
+  }
+  .leaderboard {
+    width: 0px;
+    overflow: auto;
+    padding-right: 0%;
+    transition: 0.5s ease-out;
+  }
+  .leaderheadings {
+    font-size: 25px;
+    transition: 0.6s;
+  }
+  .leaderuser span {
+    font-size: 15px;
+    transition: 0.6s;
+  }
+  .filter-container {
+    margin-right: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .filterresultbooks {
+    margin-right: 1%;
+  }
+  .feedbox {
+    margin-right: 1%;
+  }
+  .search-results-final {
+    margin-left: 45%;
+    margin-right: 25%;
+  }
+  .titleside {
+    display: none;
+    height: 0;
+  }
+  .sidenav {
+    width: 20%;
+    padding-top: 2px;
+  }
+
+  .authorsearch-container,
+  .genresearch-container,
+  .pricesearch-container {
+    width: 80%;
+    margin-top: 20%;
+  }
+  .bookimage {
+    width: 150px;
+    height: 150px;
+  }
+  .userimage {
+    width: 30px;
+    height: 30px;
+  }
+  .filterresultbooks {
+    padding: 1px;
+  }
+  .bookcontainer img {
+    height: 20%;
+    width: 60%;
+  }
+  .filterbooktitle,
+  .filterbookauthor,
+  .filterbookprice,
+  .filterbookprice {
+    font-size: 20px;
+  }
+  .searchuser {
+    margin-right: 1%;
+  }
+  .closeprofile,
+  .close {
+    font-size: 15px;
+  }
+  .emailtitle {
+    display: block;
+  }
+  .follfollowingwritten {
+    flex-direction: column;
+  }
+}

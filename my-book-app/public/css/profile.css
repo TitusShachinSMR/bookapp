@@ -1,0 +1,517 @@
+body,
+html {
+  background-color: black;
+  background-image: url("../stylingimages/profilebg.jpg");
+}
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-right: 2px white solid;
+  background-image: url("../stylingimages/blurimage.jpg");
+}
+.badge {
+  width: 100px;
+  height: 100px;
+}
+.badgeblock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  color: #ffffff;
+  width: 100%;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.849);
+  display: flex;
+  flex-direction: row;
+}
+
+.sidenav a:hover {
+  color: rgb(5, 255, 242);
+}
+
+.titleside {
+  position: absolute;
+  background-color: black;
+  font-family: "Freehand", cursive;
+  width: 80%;
+  margin-left: 35%;
+  color: rgb(255, 255, 255);
+  top: 0px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: transparent;
+}
+.sidenav a div {
+  padding-top: 5px;
+  margin-left: 20%;
+}
+.svg {
+  margin-left: 2px;
+}
+
+.openbtn:hover {
+  color: rgb(228, 159, 159);
+}
+.sidebarprofile {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.imageprofile {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin-left: 30%;
+  height: 18%;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  background-image: url("../stylingimages/bookblackandwhite.jpg");
+  margin-bottom: 3px;
+  border-radius: 10px;
+}
+.title img {
+  border: 2px white solid;
+  border-radius: 50%;
+  display: inline;
+  background-color: black;
+}
+.extra {
+  color: white;
+  font-size: 60px;
+  font-family: "Freehand", cursive;
+  display: inline;
+  margin-left: 4px;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px rgb(112, 208, 203);
+}
+
+.noresult {
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(37, 222, 255, 0.5)
+  );
+  border-radius: 10px;
+}
+
+.sidebarprofile {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.imageprofile {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin-left: 30%;
+  height: 18%;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.finalprofile-container {
+  color: white;
+  width: 100%;
+  margin-right: 0px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+}
+.profile-image {
+  margin-left: 23%;
+  margin-top: 5%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.mainprofile {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.userdetails {
+  position: relative;
+  left: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: fit-content;
+  color: white;
+}
+.profile-name {
+  font-size: 32px;
+}
+.imageprofile:hover {
+  border: 3px rgb(0, 0, 0) solid;
+}
+
+.emailtitle {
+  margin-top: 5px;
+  font-size: 20px;
+  display: inline;
+}
+.profile-email {
+  font-size: 20px;
+  display: inline;
+}
+.bio {
+  margin-top: 10%;
+  white-space: pre-wrap;
+}
+
+.useredit {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  width: 100%;
+  align-items: center;
+}
+.editprofile {
+  background-color: rgb(133, 126, 126);
+  color: rgb(255, 255, 255);
+  margin-left: 10%;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.follfollowingwritten {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+}
+.followers {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: 20%;
+}
+.followerscount {
+  margin-right: 4px;
+}
+.following {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: 20%;
+}
+.followingcount {
+  margin-right: 4px;
+}
+
+.uploads {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: 20%;
+}
+.uploadcount {
+  margin-right: 4px;
+}
+.postandsaved {
+  width: 79.5%;
+  margin-left: 20%;
+  border-top: 1px ridge white;
+  height: fit-content;
+}
+.postandsavedheadings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.postheading {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.savedheading {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.posts {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.saved {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.explore {
+  text-align: center;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.explore svg {
+  animation: rotate 3s linear infinite;
+  transform-origin: center;
+}
+.createdbooksbookcontainer {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+  border: 1px solid white;
+  background-image: url("../stylingimages/brownbackground.jpg");
+  position: relative;
+  margin: 10px;
+  flex: 1 1 calc(25% - 16px);
+}
+.createdbooksbookdetails {
+  width: 200px;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  margin: 10px;
+  background-image: linear-gradient(to right, white, black);
+  position: relative;
+}
+.createdbooksmeta {
+  height: fit-content;
+  color: white;
+  width: fit-content;
+  display: none;
+}
+.createdbookscoverpage {
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+}
+.createdbookstitle,
+.createdbooksauthor,
+.createdbooksgenre {
+  height: fit-content;
+  padding: 5px;
+  text-align: center;
+  background-color: black;
+  border-radius: 10px;
+}
+#metaCanvas {
+  color: white;
+  border: white solid 2px;
+  z-index: 2;
+  height: fit-content;
+}
+#metaCanvas p {
+  color: white;
+  z-index: 2;
+}
+.score {
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  left: 80%;
+  font-size: 25px;
+  font-family: "Roboto Mono", monospace;
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+.finalprofile-container {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(37, 222, 255, 0.5)
+  );
+}
+.badge {
+  margin: 10px;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .pages {
+    display: none;
+  }
+  .imageprofile {
+    width: 50px;
+    height: 50px;
+    margin-top: 40%;
+    margin-left: 5%;
+  }
+  .titleside {
+    display: none;
+  }
+  .sidenav {
+    width: 13%;
+  }
+  .extra {
+    background-color: #0000009c;
+  }
+  .finalprofile-container {
+    padding-left: 0;
+  }
+  .closeprofile {
+    left: 2%;
+  }
+  .profilebox {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .follow {
+    width: fit-content;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .following {
+    margin-right: 3%;
+  }
+  .followers {
+    margin-right: 3%;
+  }
+  .badge {
+    width: 50px;
+    height: 50px;
+  }
+  .divforprofile {
+    width: 100px;
+    height: 100px;
+  }
+  .bookcoverpage {
+    height: 30%;
+  }
+  .emailtitle {
+    font-size: 17px;
+  }
+  .profile-email {
+    font-size: 16px;
+  }
+  .editprofile {
+    width: fit-content;
+    font-size: 16px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .finalprofile-container {
+    flex-direction: column;
+  }
+  .userdetails {
+    width: 100%;
+    height: fit-content;
+    left: 20%;
+  }
+  .bio {
+    font-size: 13px;
+  }
+  .badge {
+    width: 50px;
+    height: 50px;
+  }
+  .postheading {
+    font-size: 0px;
+  }
+  .savedheading {
+    font-size: 0px;
+  }
+  .score {
+    z-index: 3;
+    position: fixed;
+    left: 3px;
+    font-size: 13px;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+  }
+  .emailtitle {
+    display: block;
+  }
+}
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (max-width: 350px) {
+  .pages {
+    display: none;
+  }
+  .title img {
+    margin-left: 20%;
+  }
+  .extra {
+    font-size: 35px;
+    text-shadow: none;
+    background-color: transparent;
+    color: #000000;
+  }
+  .imageprofile {
+    width: 50px;
+    height: 50px;
+    margin-top: 40%;
+    margin-left: 5%;
+  }
+
+  .titleside {
+    display: none;
+  }
+  .sidenav {
+    width: 20%;
+  }
+  .emailtitle {
+    display: block;
+  }
+}

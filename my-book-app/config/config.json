@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "2005",
+    "database": "my_book_app_dev",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "2005",
+    "database": "my_book_app_test",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "2005",
+    "database": "my_book_app_prod",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

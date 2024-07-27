@@ -1,0 +1,322 @@
+body,
+html {
+  background-color: black;
+  background-image: url("../stylingimages/magical\ space\ bg.jpg");
+}
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-right: 2px white solid;
+  background-image: url("../stylingimages/blurimage.jpg");
+}
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  color: #ffffff;
+  width: 100%;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.849);
+  display: flex;
+  flex-direction: row;
+}
+
+.sidenav a:hover {
+  color: rgb(5, 255, 242);
+}
+
+.titleside {
+  position: absolute;
+  background-color: black;
+  font-family: "Freehand", cursive;
+  width: 80%;
+  margin-left: 35%;
+  color: rgb(255, 255, 255);
+  top: 0px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: transparent;
+}
+.sidenav a div {
+  padding-top: 5px;
+  margin-left: 20%;
+}
+.svg {
+  margin-left: 2px;
+}
+
+.openbtn:hover {
+  color: rgb(228, 159, 159);
+}
+.sidebarprofile {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.imageprofile {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin-left: 30%;
+  height: 18%;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  background-image: url("../stylingimages/bookblackandwhite.jpg");
+}
+.title img {
+  border: 2px white solid;
+  border-radius: 50%;
+  display: inline;
+  background-color: black;
+}
+.extra {
+  color: white;
+  font-size: 60px;
+  font-family: "Freehand", cursive;
+  display: inline;
+  margin-left: 4px;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px rgb(112, 208, 203);
+}
+.carted-items {
+  margin-left: 21%;
+  margin-right: 1%;
+  margin-top: 3%;
+  height: fit-content;
+  background-color: #000000a6;
+  border-radius: 10px;
+}
+.boughtbooks {
+  margin-left: 21%;
+  margin-right: 1%;
+  margin-top: 3%;
+  height: fit-content;
+  background-color: #000000a6;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.bookcover {
+  height: 50%;
+  width: 70%;
+  border: 1px ridge white;
+  border-radius: 5px;
+}
+.author {
+  text-align: center;
+}
+.cartblock {
+  color: white;
+  border: white solid 1px;
+  margin: 5px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.boughtcartblock {
+  color: white;
+  border: white solid 1px;
+  margin: 5px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 30%;
+}
+.proceedby {
+  background-color: rgb(0, 139, 253);
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+}
+.price {
+  background-color: rgb(0, 139, 253);
+  color: #000000;
+  border-radius: 10px;
+  padding: 5px;
+}
+.cartitem {
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  width: 20%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../stylingimages/brownbackground.jpg");
+}
+.carttitle {
+  text-align: center;
+  color: white;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 25px;
+  background-image: linear-gradient(to right, black, rgb(39, 37, 37));
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.remove {
+  background-color: rgb(0, 139, 253);
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.total {
+  color: rgb(255, 251, 251);
+  text-align: right;
+  background-color: rgb(0, 139, 253);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 25px;
+  border-radius: 10px;
+  border: 2px solid rgb(72, 255, 0);
+}
+.imageprofile:hover {
+  border: 3px rgb(0, 0, 0) solid;
+}
+
+.pay-now-btn {
+  cursor: pointer;
+  color: #fff;
+  height: fit-content;
+  border: none;
+  background-color: rgb(0, 253, 17);
+  position: relative;
+  margin-left: 80%;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.booktitle {
+  text-align: center;
+}
+.noresult {
+  color: white;
+  font-size: 32px;
+  text-align: center;
+}
+.boughtcartitem {
+  background-image: url("../stylingimages/brownbackground.jpg");
+  width: 100%;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .pages {
+    display: none;
+  }
+  .imageprofile {
+    width: 50px;
+    height: 50px;
+    margin-top: 40%;
+    margin-left: 5%;
+  }
+  .titleside {
+    display: none;
+  }
+  .sidenav {
+    width: 13%;
+  }
+  .extra {
+    background-color: #0000009c;
+  }
+  .bookcover {
+    width: 80%;
+    height: 80%;
+  }
+  .cartitem {
+    width: 50%;
+  }
+  .carttitle {
+    margin-left: 20%;
+  }
+  .pay-now-btn {
+    margin-left: 70%;
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (max-width: 350px) {
+  .pages {
+    display: none;
+  }
+  .title img {
+    margin-left: 20%;
+  }
+  .extra {
+    font-size: 35px;
+    text-shadow: none;
+    background-color: transparent;
+    color: #000000;
+  }
+  .imageprofile {
+    width: 50px;
+    height: 50px;
+    margin-top: 40%;
+    margin-left: 5%;
+  }
+
+  .titleside {
+    display: none;
+  }
+  .sidenav {
+    width: 20%;
+    overflow: auto;
+    padding-top: 10px;
+  }
+  .remove {
+    margin-top: 10px;
+  }
+  .cartblock {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .pay-now-btn {
+    margin-left: 50%;
+  }
+  .total {
+    font-size: 20px;
+  }
+  .boughtbooks {
+    flex-direction: column;
+  }
+  .boughtcartblock {
+    width: 80%;
+  }
+  .carttitle {
+    font-size: 20px;
+  }
+}

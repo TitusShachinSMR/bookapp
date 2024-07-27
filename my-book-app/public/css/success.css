@@ -1,0 +1,45 @@
+body,
+html {
+  background-image: url("../stylingimages/success.jpg");
+}
+h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(16, 255, 16),
+    rgb(0, 114, 245)
+  );
+  padding: 10px;
+  border-radius: 10px;
+}
+p {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(16, 255, 16),
+    rgb(0, 114, 245)
+  );
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 25px;
+}
+.gotocart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.cartbutton {
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(16, 255, 16),
+    rgb(0, 114, 245)
+  );
+  padding: 5px;
+  font-size: 25px;
+  border-radius: 10px;
+  width: fit-content;
+}

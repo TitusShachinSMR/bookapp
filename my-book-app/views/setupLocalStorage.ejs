@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>booksup</title>
+    <script>
+      // Retrieve username and email from query params
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get("username");
+      const email = params.get("email");
+      // Store username and email in localStorage under 'user' key
+      localStorage.setItem("user", JSON.stringify({ username, email }));
+      // Redirect to the dashboard or handle UI update
+      window.location.href = "/dashboard";
+    </script>
+  </head>
+  <body></body>
+</html>

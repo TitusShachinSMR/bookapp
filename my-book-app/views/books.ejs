@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>book-profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Freehand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Freehand&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/books.css" />
+
+    <script type="module" src="https://unpkg.com/date-fns@latest"></script>
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <div class="titleside">Book's Up</div>
+      <div class="imageprofile">
+        <img
+          class="sidebarprofile"
+          src="../stylingimages/user_6994618.png"
+          alt="profile"
+        />
+      </div>
+      <a href="/dashboard"
+        ><svg
+          class="home"
+          xmlns="http://www.w3.org/2000/svg"
+          height="35px"
+          viewBox="0 -960 960 960"
+          width="35px"
+          fill="#e8eaed"
+        >
+          <path
+            d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
+          />
+        </svg>
+        <div class="pages">Home</div></a
+      >
+      <a class="logout"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="35px"
+          viewBox="0 -960 960 960"
+          width="35px"
+          fill="#FFFFFF"
+          class="login-button"
+        >
+          <path
+            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"
+          />
+        </svg>
+        <div class="pages">Logout</div></a
+      >
+
+      <a href="/cart" class="carticon"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="40px"
+          viewBox="0 -960 960 960"
+          width="40px"
+          fill="#e8eaed"
+          class="cart"
+        >
+          <path
+            d="M284.53-80.67q-30.86 0-52.7-21.97Q210-124.62 210-155.47q0-30.86 21.98-52.7Q253.95-230 284.81-230t52.69 21.98q21.83 21.97 21.83 52.83t-21.97 52.69q-21.98 21.83-52.83 21.83Zm400 0q-30.86 0-52.7-21.97Q610-124.62 610-155.47q0-30.86 21.98-52.7Q653.95-230 684.81-230t52.69 21.98q21.83 21.97 21.83 52.83t-21.97 52.69q-21.98 21.83-52.83 21.83ZM238.67-734 344-515.33h285.33l120-218.67H238.67ZM206-800.67h589.38q22.98 0 34.97 20.84 11.98 20.83.32 41.83L693.33-490.67q-11 19.34-28.87 30.67-17.87 11.33-39.13 11.33H324l-52 96h487.33V-286H278q-43 0-63-31.83-20-31.84-.33-68.17l60.66-111.33-149.33-316H47.33V-880h121.34L206-800.67Zm138 285.34h285.33H344Z"
+          />
+        </svg>
+        <div class="pages">Cart</div></a
+      >
+      <a href="/uploadbook" id="create"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="40px"
+          viewBox="0 -960 960 960"
+          width="40px"
+          fill="#EFEFEF"
+          class="cart-item"
+        >
+          <path
+            d="M448.67-280h66.66v-164H680v-66.67H515.33V-680h-66.66v169.33H280V-444h168.67v164Zm31.51 200q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm.15-66.67q139 0 236-97.33t97-236.33q0-139-96.87-236-96.88-97-236.46-97-138.67 0-236 96.87-97.33 96.88-97.33 236.46 0 138.67 97.33 236 97.33 97.33 236.33 97.33ZM480-480Z"
+          />
+        </svg>
+        <div class="pages">Create</div></a
+      >
+      <a href="/updateprofile" class="edit"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="40px"
+          viewBox="0 -960 960 960"
+          width="40px"
+          fill="#e8eaed"
+          class="editicon"
+        >
+          <path
+            d="M226-262q59-42.33 121.33-65.5 62.34-23.17 132.67-23.17 70.33 0 133 23.17T734.67-262q41-49.67 59.83-103.67T813.33-480q0-141-96.16-237.17Q621-813.33 480-813.33t-237.17 96.16Q146.67-621 146.67-480q0 60.33 19.16 114.33Q185-311.67 226-262Zm253.88-184.67q-58.21 0-98.05-39.95Q342-526.58 342-584.79t39.96-98.04q39.95-39.84 98.16-39.84 58.21 0 98.05 39.96Q618-642.75 618-584.54t-39.96 98.04q-39.95 39.83-98.16 39.83ZM480.31-80q-82.64 0-155.64-31.5-73-31.5-127.34-85.83Q143-251.67 111.5-324.51T80-480.18q0-82.82 31.5-155.49 31.5-72.66 85.83-127Q251.67-817 324.51-848.5T480.18-880q82.82 0 155.49 31.5 72.66 31.5 127 85.83Q817-708.33 848.5-635.65 880-562.96 880-480.31q0 82.64-31.5 155.64-31.5 73-85.83 127.34Q708.33-143 635.65-111.5 562.96-80 480.31-80Zm-.31-66.67q54.33 0 105-15.83t97.67-52.17q-47-33.66-98-51.5Q533.67-284 480-284t-104.67 17.83q-51 17.84-98 51.5 47 36.34 97.67 52.17 50.67 15.83 105 15.83Zm0-366.66q31.33 0 51.33-20t20-51.34q0-31.33-20-51.33T480-656q-31.33 0-51.33 20t-20 51.33q0 31.34 20 51.34 20 20 51.33 20Zm0-71.34Zm0 369.34Z"
+          />
+        </svg>
+        <div class="pages">Edit</div></a
+      >
+    </div>
+    <div class="title">
+      <img
+        src="../stylingimages/bookhup.png"
+        alt=""
+        height="80px"
+        width="80px"
+      />
+      <div class="extra">ook's Up</div>
+    </div>
+    <div class="isbn"><%=isbnnumber%></div>
+    <div class="bookcontainer">
+      <div class="bookdetails">
+        <div class="icons">
+          <div class="explore">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="30px"
+              viewBox="0 -960 960 960"
+              width="30px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M440-226.67q122 0 207.67-85.5 85.66-85.5 85.66-207.83 0-122-85.66-207.67Q562-813.33 440-813.33q-122.33 0-207.83 85.66Q146.67-642 146.67-520q0 122.33 85.5 207.83 85.5 85.5 207.83 85.5ZM440-520Zm0 160q-83 0-147.5-44.5T200-520q28-70 92.5-115T440-680q82 0 146.5 45T680-520q-29 71-93.5 115.5T440-360Zm0-60q55 0 101-26.5t72-73.5q-26-46-72-73t-101-27q-56 0-102 27t-72 73q26 47 72 73.5T440-420Zm0-46.67q21.67 0 37.5-15.33 15.83-15.33 15.83-38 0-21.67-15.83-37.5-15.83-15.83-37.5-15.83-22.67 0-38 15.83-15.33 15.83-15.33 37.5 0 22.67 15.33 38 15.33 15.33 38 15.33ZM440-160q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T80-520q0-74 28.5-139.5t77-114.5q48.5-49 114-77.5T440-880q74 0 139.5 28.5T694-774q49 49 77.5 114.5T800-520q0 66-22 124.33-22 58.34-61 106l162.33 163-47 46.67-163-162.67q-47.66 39-106 60.84Q505-160 440-160Z"
+              />
+            </svg>
+          </div>
+          <div class="savebook">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="30px"
+              viewBox="0 -960 960 960"
+              width="30px"
+              fill="#FFFFFF"
+            >
+              <path
+                d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H240Zm0-80h480v-640h-80v280l-100-60-100 60v-280H240v640Zm0 0v-640 640Zm200-360 100-60 100 60-100-60-100 60Z"
+              />
+            </svg>
+          </div>
+
+          <div class="addtocart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="30px"
+              viewBox="0 -960 960 960"
+              width="30px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M456.67-608.67v-122H334v-66.66h122.67v-122h66.66v122h122v66.66h-122v122h-66.66ZM286.53-80q-30.86 0-52.7-21.97Q212-123.95 212-154.81q0-30.86 21.98-52.69 21.97-21.83 52.83-21.83t52.69 21.97q21.83 21.98 21.83 52.84 0 30.85-21.97 52.69Q317.38-80 286.53-80Zm402.66 0q-30.86 0-52.69-21.97-21.83-21.98-21.83-52.84 0-30.86 21.97-52.69 21.98-21.83 52.84-21.83 30.85 0 52.69 21.97Q764-185.38 764-154.52q0 30.85-21.97 52.69Q720.05-80 689.19-80ZM54.67-813.33V-880h121l170 362.67H630.8l158.87-280h75L698-489.33q-11 19.33-28.87 30.66-17.88 11.34-39.13 11.34H328.67l-52 96H764v66.66H282.67q-40.11 0-61.06-33-20.94-33-2.28-67L280-496 133.33-813.33H54.67Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="comments">
+        <div class="commentheading">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="40px"
+            viewBox="0 -960 960 960"
+            width="40px"
+            fill="#e8eaed"
+          >
+            <path
+              d="M240-400h480v-66.67H240V-400Zm0-126.67h480v-66.66H240v66.66Zm0-126.66h480V-720H240v66.67ZM880-80 720-240H146.67q-27 0-46.84-19.83Q80-279.67 80-306.67v-506.66q0-27 19.83-46.84Q119.67-880 146.67-880h666.66q27 0 46.84 19.83Q880-840.33 880-813.33V-80ZM146.67-306.67h602l64.66 68.34v-575H146.67v506.66Zm0 0v-506.66 506.66Z"
+            /></svg
+          >Comments...
+        </div>
+        <div class="comments-show"></div>
+        <div class="rating">
+          <span>R</span>
+          <span>A</span>
+          <span>T</span>
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+          <span>I</span>
+          <span>N</span>
+          <span>G</span>
+        </div>
+        <textarea rows="5" cols="10" class="commentarea"> </textarea>
+        <div class="submit">Post</div>
+        <div class="deletecomment">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#FFFFFF"
+            class="svg"
+          >
+            <path
+              d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="finalprofile-container">
+      <span class="close">&#9587;</span>
+      <div class="profile-image">
+        <div class="divforprofile">
+          <img
+            class="mainprofile"
+            src="..\stylingimages\user_6994618.png"
+            alt="profile"
+            width="100%"
+            height="100%"
+          />
+        </div>
+      </div>
+      <div class="userdetails">
+        <div class="useredit">
+          <div class="profile-name">username</div>
+          <div class="follow">Follow</div>
+        </div>
+        <div class="emailtitle">email:</div>
+        <div class="profile-email"></div>
+        <div class="follfollowingwritten">
+          <div class="followers">
+            <div class="followerscount">0</div>
+            <div>followers</div>
+          </div>
+          <div class="following">
+            <div class="followingcount">0</div>
+            <div>following</div>
+          </div>
+          <div class="uploads">
+            <div class="uploadcount">0</div>
+            <div>uploads</div>
+          </div>
+        </div>
+        <div class="bio">bio</div>
+        <div class="badgeblock"></div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="../js/books.js"></script>
+</html>

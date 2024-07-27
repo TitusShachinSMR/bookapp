@@ -1,0 +1,134 @@
+body {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  background-image: url("../stylingimages/registerimage.jpg");
+}
+
+.registercontainer {
+  font-family: "Playwrite US Modern", sans-serif;
+  box-shadow: rgb(234, 255, 0) 2px 2px 2px 2px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  background-image: url("../stylingimages/registerblock.jpg");
+  width: 40%;
+  height: 80%;
+  position: fixed;
+  right: 5%;
+  top: 10%;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.designs {
+  width: 50%;
+  height: 50%;
+}
+.designs img {
+  opacity: 0.7;
+  border-radius: 10px;
+}
+.Register {
+  width: 80%;
+  height: 30px;
+  margin: 10px;
+  margin-left: 10%;
+  border-radius: 10px;
+  background-color: #000000d6;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.Register:hover {
+  background-color: rgba(255, 255, 255, 0.66);
+  color: black;
+}
+.registerheading {
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: center;
+  font-family: "Playwrite DE Grund", cursive;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.728);
+  border-radius: 10px;
+}
+.email,
+.password,
+.username {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"] {
+  height: 40px;
+  width: 90%;
+  margin-left: 5%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.897);
+  color: white;
+  border: 1px solid white;
+}
+.login {
+  width: 80%;
+  height: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000d6;
+  border: 1px solid rgb(0, 0, 0);
+  color: white;
+  font-weight: normal;
+  font-size: 20px;
+}
+.login:hover {
+  background-color: rgba(255, 255, 255, 0.66);
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .registercontainer {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: fit-content;
+  }
+  .form {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .registercontainer {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 60%;
+    height: 80%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .registercontainer {
+    height: 70%;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 90%;
+  }
+  .registerheading {
+    font-size: 25px;
+  }
+  .designs {
+    display: none;
+  }
+}

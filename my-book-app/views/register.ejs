@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <title>my-book-app register</title>
+    <link rel="stylesheet" href="/css/register.css" />
+  </head>
+  <body>
+    <div class="designs">
+      <img
+        width="100%"
+        height="100%"
+        src="../stylingimages/registerquote.jpg"
+      />
+    </div>
+    <div class="registercontainer">
+      <div class="registerheading">Register</div>
+      <form action="/auth/register" method="POST" id="registerform">
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          class="username"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="email"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          class="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit" class="Register">Register</button>
+        <div class="login">login</div>
+      </form>
+    </div>
+  </body>
+  <script src="/js/register.js"></script>
+</html>
