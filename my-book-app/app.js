@@ -101,7 +101,7 @@ app.get("/username/:email", (req, res) => {
   db.query(query, [email], (error, result) => {
     if (error) {
       console.log(error);
-      res.status(500).send("Internal Server Error");
+      res.send("Internal Server Error");
     } else {
       console.log("result " + result);
       res.send(result);
@@ -118,7 +118,7 @@ app.get("/userprofile/:id", (req, res) => {
   db.query(query, [id], (error, result) => {
     if (error) {
       console.log(error);
-      res.status(500).send("Internal Server Error");
+      res.send("Internal Server Error");
     } else {
       console.log("result " + result);
       res.send(result);
@@ -133,7 +133,7 @@ app.get(`/searchauthor`, (req, res) => {
   const query = `SELECT DISTINCT author FROM books WHERE author LIKE ? LIMIT 5`;
   db.query(query, [`%${searchTerm}%`], (error, results) => {
     if (error) {
-      return res.status(500).json({ error });
+      return res.json({ error });
     }
     res.json(results);
   });
@@ -143,7 +143,7 @@ app.get("/searchuser", function (req, res) {
   const user = req.query.q;
 
   if (!user) {
-    return res.status(400).send("Bad Request: Missing query parameter 'q'");
+    return res.send("Bad Request: Missing query parameter 'q'");
   }
 
   console.log("user query:", user);
@@ -153,7 +153,7 @@ app.get("/searchuser", function (req, res) {
   db.query(query, [`%${user}%`], (error, result) => {
     if (error) {
       console.error("Database query error:", error);
-      res.status(500).send("Internal Server Error");
+      res.send("Internal Server Error");
     } else {
       console.log("Result:", result);
       res.json(result);
