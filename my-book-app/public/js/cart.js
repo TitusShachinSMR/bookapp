@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   profile.addEventListener("click", (e) => {
     window.location.href = "/profile";
   });
-  // Initialize Stripe with your publishable key
+  // Initializing stripe with publishable key
   const stripe = Stripe(
     "pk_test_51PagBdK9Fxp0fj5rPg8HJ8R5uJ6R7Gj87Qm0Jv2e8WY8AumEnsB99tkBYJlVkFOETdDpRmEy9Uu5V6Dauqvt8AkK00Huo1AQNu"
   );
