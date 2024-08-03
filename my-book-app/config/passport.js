@@ -1,4 +1,4 @@
-// passport.js
+
 const passport = require("passport");
 const { Strategy: GoogleStrategy } = require("passport-google-oauth20");
 const { Strategy: LocalStrategy } = require("passport-local");
@@ -8,8 +8,8 @@ const bcrypt = require("bcryptjs");
 passport.use(
   new LocalStrategy(
     {
-      usernameField: "email", //  login form has an input field with name 'email'
-      passwordField: "password", // the login form has an input field with name 'password'
+      usernameField: "email", //getting input from the login form
+      passwordField: "password", 
     },
     async (email, password, done) => {
       try {
@@ -21,14 +21,14 @@ passport.use(
           return done(null, false, { message: "Incorrect email or password." });
         }
 
-        // Validate password
+        // Validating password
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
           return done(null, false, { message: "Incorrect email or password." });
         }
 
-        // If credentials are correct, return the user object
+        // If credentials are correct, return the user details
         return done(null, user);
       } catch (err) {
         console.error("Error authenticating user:", err);
@@ -54,7 +54,7 @@ passport.use(
           return done(null, user);
         }
 
-        // If user doesn't exist, create a new user
+        // if user doesn't exist, creating a new user
         user = await User.create({
           username: profile.displayName,
           email: profile.emails[0].value,
@@ -67,12 +67,13 @@ passport.use(
           email: profile.emails[0].value,
         });
       } catch (err) {
-        console.error("Error creating or finding user:", err); // Log the error for debugging
+        console.error("Error creating or finding user:", err); 
         return done(err);
       }
     }
   )
 );
+//SERIALIZING AND DESERIALIZING THE USER INTO SESSION
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
