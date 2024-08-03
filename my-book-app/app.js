@@ -259,7 +259,7 @@ app.post("/updateprofile/:email", (req, res) => {
   const { bio, username } = req.body;
 
   if (!bio || !username) {
-    return res.status(400).json({
+    return res.json({
       status: "error",
       message: "bio and username required",
     });
@@ -269,7 +269,7 @@ app.post("/updateprofile/:email", (req, res) => {
   db.execute(query, [bio, username, email], (err, results) => {
     if (err) {
       console.error("Error executing query:", err);
-      return res.status(500).json({
+      return res.json({
         status: "error",
         message: "An error occurred while updating the bio",
       });
@@ -290,9 +290,7 @@ app.get("/gethashedpassword/:email", async (req, res) => {
   db.query(query, [email], (err, result) => {
     if (err) {
       console.log(err);
-      return res
-        .status(500)
-        .json({ error: true, message: "Password could not be found" });
+      return res.json({ error: true, message: "Password could not be found" });
     }
 
     if (result.length === 0) {
@@ -362,7 +360,7 @@ app.post(
     );
     console.log(genre, author, bookname, description, id, coverpath);
     if (!genre || !author || !bookname || !description || !id) {
-      return res.status(400).json({
+      return res.json({
         status: "error",
         message: "All fields are required",
       });
@@ -393,7 +391,7 @@ app.post(
           }
         });
       }
-      return res.status(400).json({
+      return res.json({
         status: "error",
         message: "ISBN not found for the provided book details",
       });
@@ -445,7 +443,7 @@ app.post(
       async (err, results) => {
         if (err) {
           console.error("Error executing query:", err);
-          return res.status(500).json({
+          return res.json({
             status: "error",
             message: "this book is already uploaded",
           });
@@ -495,9 +493,7 @@ app.get("/search", async (req, res) => {
       pagecounters: volumeInfo.pageCount,
     });
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Error fetching data from Google Books API" });
+    res.json({ error: "Error fetching data from Google Books API" });
   }
 });
 //----------------------------------------------------------------
@@ -509,9 +505,7 @@ app.get("/createdbooks/:id", (req, res) => {
   db.query(query, [id], (error, results) => {
     if (error) {
       console.error("Database query error:", error); // Log the error for debugging purposes
-      return res
-        .status(500)
-        .json({ status: "error", message: "error in loading book profile" });
+      return res.json({ status: "error", message: "error in loading book profile" });
     }
     res.json(results);
   });
@@ -527,14 +521,10 @@ app.get("/bookdetails/:isbn", (req, res) => {
   db.query(query, [isbn], (error, results) => {
     if (error) {
       console.error("Database query error:", error); // Log the error for debugging purposes
-      return res
-        .status(500)
-        .json({ status: "error", message: "Error in loading book profile" });
+      return res.json({ status: "error", message: "Error in loading book profile" });
     }
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ status: "error", message: "Book not found" });
+      return res.json({ status: "error", message: "Book not found" });
     }
     res.send(results[0]);
   });
@@ -552,7 +542,7 @@ app.post("/postcommentsandrating", async (req, res) => {
 
   // Basic validation
   if (!bookid || !userid || !comment || !rating || !username) {
-    return res.status(500).json({ error: "All fields are required" });
+    return res.json({ error: "All fields are required" });
   }
 
   const query = `
@@ -573,9 +563,7 @@ app.post("/postcommentsandrating", async (req, res) => {
         console.error(err);
         return res.status(500).json({ error: "Internal server error" });
       } else {
-        return res
-          .status(200)
-          .json({ message: "review uploaded successfully" });
+        return res.json({ message: "review uploaded successfully" });
       }
     }
   );
@@ -619,7 +607,7 @@ app.get("/getcommentsandrating/:bookid", (req, res) => {
   db.query(query, [bookid], (err, results) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ error: "Internal server error" });
+      return res.json({ error: "Internal server error" });
     }
     console.log(results);
     res.json(results);
@@ -639,48 +627,48 @@ app.post("/deletecomments", (req, res) => {
 
   db.beginTransaction((err) => {
     if (err) {
-      return res.status(500).json({ error: "Internal server error" });
+      return res.json({ error: "Internal server error" });
     }
 
     db.query(disableFKChecks, (err) => {
       if (err) {
         return db.rollback(() => {
-          res.status(500).json({ error: "Internal server error" });
+          res.json({ error: "Internal server error" });
         });
       }
 
       db.query(deleteLikes, [commentid, userid], (err) => {
         if (err) {
           return db.rollback(() => {
-            res.status(500).json({ error: "Internal server error" });
+            res.json({ error: "Internal server error" });
           });
         }
 
         db.query(deleteComments, [commentid], (err) => {
           if (err) {
             return db.rollback(() => {
-              res.status(500).json({ error: "Internal server error" });
+              res.json({ error: "Internal server error" });
             });
           }
 
           db.query(updateReviewCountandscore, [userid], (err) => {
             if (err) {
               return db.rollback(() => {
-                res.status(500).json({ error: "Internal server error" });
+                res.json({ error: "Internal server error" });
               });
             }
 
             db.query(enableFKChecks, (err) => {
               if (err) {
                 return db.rollback(() => {
-                  res.status(500).json({ error: "Internal server error" });
+                  res.json({ error: "Internal server error" });
                 });
               }
 
               db.commit((err) => {
                 if (err) {
                   return db.rollback(() => {
-                    res.status(500).json({ error: "Internal server error" });
+                    res.json({ error: "Internal server error" });
                   });
                 }
 
@@ -706,7 +694,7 @@ app.post("/bookmarkedbook/:bookid", (req, res) => {
   db.query(query, [userid, bookid], (err, results) => {
     if (err) {
       console.error(err);
-      res.status(500).json({
+      res.json({
         message: "bookmark failed",
       });
     }
@@ -725,9 +713,7 @@ app.get(`/getbookmarkedbooks/:userid`, (req, res) => {
   db.query(query, [id], (error, results) => {
     if (error) {
       console.error("Database query error:", error); // Log the error for debugging purposes
-      return res
-        .status(500)
-        .json({ status: "error", message: "error in loading book profile" });
+      return res.json({ status: "error", message: "error in loading book profile" });
     }
     res.json(results);
     console.log(results);
@@ -760,9 +746,7 @@ app.post("/filterbooks", function (req, res) {
     db.query(query, querydynamic, (error, results) => {
       if (error) {
         console.error("Database query error:", error); // Log the error for debugging purposes
-        return res
-          .status(500)
-          .json({ status: "error", message: "Error in fetching books" });
+        return res.json({ status: "error", message: "Error in fetching books" });
       }
       res.json(results);
     });
@@ -780,7 +764,7 @@ app.post("/addtocart/:bookid", (req, res) => {
   db.query(query, [userid, bookid], (err, results) => {
     if (err) {
       console.error(err);
-      res.status(500).json({
+      res.json({
         message: "Failed to add to cart",
       });
     }
@@ -800,9 +784,7 @@ app.get(`/cartedbooks/:userid`, (req, res) => {
   db.query(query, [id], (error, results) => {
     if (error) {
       console.error("Database query error:", error); // Log the error for debugging purposes
-      return res
-        .status(500)
-        .json({ status: "error", message: "error in loading book profile" });
+      return res.json({ status: "error", message: "error in loading book profile" });
     }
     res.json(results);
     console.log(results);
@@ -818,9 +800,7 @@ app.get(`/boughtbooks/:userid`, (req, res) => {
   db.query(query, [id], (error, results) => {
     if (error) {
       console.error("Database query error:", error); // Log the error for debugging purposes
-      return res
-        .status(500)
-        .json({ status: "error", message: "error in loading book profile" });
+      return res.json({ status: "error", message: "error in loading book profile" });
     }
     res.json(results);
     console.log(results);
@@ -850,10 +830,10 @@ app.post("/create-checkout-session", async (req, res) => {
     // Get the current exchange rate
     const exchangeRate = await getExchangeRate();
 
-    // Convert INR to USD
+    // Convert inr to usd
     const amountInUSD = (amountInINR * exchangeRate).toFixed(2) * 100; // Stripe expects amount in cents
 
-    // Create a new Checkout Session
+    // Create a new checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: [
@@ -875,7 +855,7 @@ app.post("/create-checkout-session", async (req, res) => {
 
     res.json({ id: session.id });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.json({ error: error.message });
   }
 });
 app.post("/addanddelete", function (req, res) {
@@ -917,7 +897,7 @@ app.post("/likeanddislikecomment", (req, res) => {
   db.query(query1, [userid, commentid], (err, results) => {
     if (err) {
       console.log(err);
-      return res.status(500).json({ error: "Internal server error" });
+      return res.json({ error: "Internal server error" });
     }
 
     if (results.length > 0) {
@@ -935,7 +915,7 @@ app.post("/likeanddislikecomment", (req, res) => {
             (err, result) => {
               if (err) {
                 console.log(err);
-                return res.status(500).json({ error: "Internal server error" });
+                return res.json({ error: "Internal server error" });
               } else {
                 console.log(result);
               }
@@ -982,7 +962,7 @@ app.post("/likeanddislikecomment", (req, res) => {
             (err, result) => {
               if (err) {
                 console.log(err);
-                return res.status(500).json({ error: "Internal server error" });
+                return res.json({ error: "Internal server error" });
               } else {
                 console.log(result);
               }
@@ -994,7 +974,7 @@ app.post("/likeanddislikecomment", (req, res) => {
           db.query(query3, [userid, commentid], (err, result) => {
             if (err) {
               console.log(err);
-              return res.status(500).json({ error: "Internal server error" });
+              return res.json({ error: "Internal server error" });
             } else {
               console.log(result);
               return res.json({
@@ -1023,7 +1003,7 @@ app.post("/likeanddislikecomment", (req, res) => {
       db.query(query2, [userid, commentid, boolean], (err, result) => {
         if (err) {
           console.log(err);
-          return res.status(500).json({ error: "Internal server error" });
+          return res.json({ error: "Internal server error" });
         } else {
           const query3 =
             "UPDATE commentsandratings SET Likes = ?, Dislikes = ? WHERE CommentID = ?";
@@ -1034,9 +1014,7 @@ app.post("/likeanddislikecomment", (req, res) => {
               (err, result) => {
                 if (err) {
                   console.log(err);
-                  return res
-                    .status(500)
-                    .json({ error: "Internal server error" });
+                  return res.json({ error: "Internal server error" });
                 } else {
                   console.log(result);
                   return res.json({
@@ -1065,9 +1043,7 @@ app.post("/likeanddislikecomment", (req, res) => {
               (err, result) => {
                 if (err) {
                   console.log(err);
-                  return res
-                    .status(500)
-                    .json({ error: "Internal server error" });
+                  return res.json({ error: "Internal server error" });
                 } else {
                   console.log(result);
                   return res.json({
@@ -1106,7 +1082,7 @@ app.post("/follow", function (req, res) {
   db.query(query, [followerid, followingid], (error, result) => {
     if (error) {
       console.log(error);
-      return res.status(500).json({ error: "Internal server error" });
+      return res.json({ error: "Internal server error" });
     }
 
     const updateFollowersCount = `
@@ -1119,7 +1095,7 @@ app.post("/follow", function (req, res) {
     db.query(updateFollowersCount, [followingid], (error, result) => {
       if (error) {
         console.log(error);
-        return res.status(500).json({ error: "Internal server error" });
+        return res.json({ error: "Internal server error" });
       }
 
       db.query(updateFollowingCount, [followerid], (error, result) => {
@@ -1144,7 +1120,7 @@ app.post("/iffollowing", (req, res) => {
   db.query(query, [followerid, followingid], (error, result) => {
     if (error) {
       console.log(error);
-      return res.status(500).json({ error: "Internal server error" });
+      return res.json({ error: "Internal server error" });
     }
     if (result.length > 0) {
       res.json({ condition: "unfollow" });
@@ -1165,9 +1141,7 @@ app.post("/unfollow", function (req, res) {
   db.query(deleteQuery, [followerid, followingid], (error, result) => {
     if (error) {
       console.log(error);
-      return res
-        .status(500)
-        .json({ status: "error", message: "Internal server error" });
+      return res.json({ status: "error", message: "Internal server error" });
     }
     if (result.affectedRows > 0) {
       const updateFollowersCount = `
@@ -1180,7 +1154,7 @@ app.post("/unfollow", function (req, res) {
       db.query(updateFollowersCount, [followingid], (error, result) => {
         if (error) {
           console.log(error);
-          return res.status(500).json({
+          return res.json({
             status: "error",
             message: "Internal server error while updating followers count",
           });
@@ -1189,7 +1163,7 @@ app.post("/unfollow", function (req, res) {
         db.query(updateFollowingCount, [followerid], (error, result) => {
           if (error) {
             console.log(error);
-            return res.status(500).json({
+            return res.json({
               status: "error",
               message: "Internal server error while updating following count",
             });
@@ -1242,7 +1216,7 @@ app.get("/userfeed/:userid", (req, res) => {
     db.query(query2, [id], (error, result) => {
       if (error) {
         console.log(error);
-        return res.status(500).json({ error: "Internal server error" });
+        return res.json({ error: "Internal server error" });
       }
       res.json(result);
     });
@@ -1336,7 +1310,7 @@ app.post("/checkbatchlikes", (req, res) => {
         return;
       } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: "Error processing badge check" });
+        return res.json({ error: "Error processing badge check" });
       }
     });
   });
@@ -1348,7 +1322,7 @@ app.get("/showbatch/:userid", (req, res) => {
   db.query(query, [id], (error, result) => {
     if (error) {
       console.log(error);
-      return res.status(500).json({ error: "Internal server error" });
+      return res.json({ error: "Internal server error" });
     }
     res.json(result);
   });
@@ -1359,7 +1333,7 @@ app.post("/deletebook", function (req, res) {
 
   db.query("SET FOREIGN_KEY_CHECKS = 0", (error, results, fields) => {
     if (error) {
-      return res.status(404).send({ status: "error", message: error });
+      return res.send({ status: "error", message: error });
     }
 
     db.query(
@@ -1367,7 +1341,7 @@ app.post("/deletebook", function (req, res) {
       [bookid, userid],
       (error, results, fields) => {
         if (error) {
-          return res.status(404).send({ status: "error", message: error });
+          return res.send({ status: "error", message: error });
         }
 
         db.query(
@@ -1383,18 +1357,14 @@ app.post("/deletebook", function (req, res) {
               [bookid],
               (error, results, fields) => {
                 if (error) {
-                  return res
-                    .status(404)
-                    .send({ status: "error", message: error });
+                  return res.send({ status: "error", message: error });
                 }
 
                 db.query(
                   "SET FOREIGN_KEY_CHECKS = 1",
                   (error, results, fields) => {
                     if (error) {
-                      return res
-                        .status(404)
-                        .send({ status: "error", message: error });
+                      return res.send({ status: "error", message: error });
                     }
 
                     const coverimage = path.join(
@@ -1444,7 +1414,7 @@ app.post("/removefromcart/:bookid", function (req, res) {
   db.query(query, [bookid, userid], (error, result) => {
     if (error) {
       console.log(error);
-      return res.status(500).json({ error: "Internal server error" });
+      return res.json({ error: "Internal server error" });
     }
     res.json(result);
   });
@@ -1457,7 +1427,7 @@ app.get("/cartedbooklist/:userid", function (req, res) {
   db.query(query, [userid], (error, results) => {
     if (error) {
       console.error(error);
-      return res.status(500).json({ error: "Internal server error" });
+      return res.json({ error: "Internal server error" });
     }
 
     const bookIds = results.map((row) => row.bookid);
@@ -1471,7 +1441,7 @@ app.get("/checkedbook/:userid", function (req, res) {
   db.query(query, [userid], (error, results) => {
     if (error) {
       console.error(error);
-      return res.status(500).json({ error: "Internal server error" });
+      return res.json({ error: "Internal server error" });
     }
 
     const bookIds = results.map((row) => row.bookid);
@@ -1498,7 +1468,7 @@ app.delete("/deletebookmarkedbook/:bookid", async (req, res) => {
   const { userid } = req.body;
 
   if (!userid) {
-    return res.status(400).json({ error: "User ID is required" });
+    return res.json({ error: "User ID is required" });
   }
 
   const query = `DELETE FROM bookmarkedbooks WHERE bookid=? AND userid=?`;
@@ -1507,9 +1477,7 @@ app.delete("/deletebookmarkedbook/:bookid", async (req, res) => {
     db.query(query, [bookid, userid], (err, result) => {
       if (err) {
         console.error(err);
-        return res
-          .status(500)
-          .json({ error: "Error deleting bookmarked book" });
+        return res.json({ error: "Error deleting bookmarked book" });
       }
       res.json({ message: "Bookmarked book deleted successfully" });
     });
