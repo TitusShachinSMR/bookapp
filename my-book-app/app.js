@@ -1,4 +1,4 @@
-// app.js
+
 const express = require("express");
 const dotenv = require("dotenv");
 const flash = require("connect-flash");
@@ -368,7 +368,7 @@ app.post(
       });
     }
 
-    // Fetch ISBN from Open Library API
+    // Fetch isbn from open library api
     const isbnResponse = await axios.get(
       `https://openlibrary.org/search.json?title=${encodeURIComponent(
         bookname
