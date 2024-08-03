@@ -1,4 +1,4 @@
-// routes/authRoutes.js
+
 const express = require("express");
 const { check } = require("express-validator");
 const {
@@ -14,7 +14,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/register", (req, res) => {
-  res.render("register"); // Render the register view
+  res.render("register"); // render the registerpage
 });
 
 router.post(
@@ -60,12 +60,12 @@ router.get(
   passport.authenticate("google", {
     failureRedirect: "/auth/login",
     failureFlash: true,
-    session: false, // Disable session handling
+    session: false, // disable session handling
   }),
   (req, res) => {
-    // if authentication is successful, constructing the user object
+    // if authentication is successful, constructing the user
     const { username, email } = req.user;
-    // Redirect to a route that sets up local storage with user info
+    // redirect to a route that sets up local storage with user info
     res.redirect(`/setupLocalStorage?username=${username}&email=${email}`);
   }
 );
