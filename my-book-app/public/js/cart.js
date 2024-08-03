@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const bookid = element.getAttribute("bookid");
             cartbooks.push(bookid);
           });
-          // Fetch checkout session ID from the server
+          //fetching checkout session from server 
           const response = await fetch("/create-checkout-session", {
             method: "POST",
             headers: {
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
           const { id: sessionId } = await response.json();
 
-          // Redirect to Stripe Checkout page
+          //redirect to stripe checkout page
           const { error } = await stripe.redirectToCheckout({ sessionId });
           if (error) {
             console.error("Error:", error);
